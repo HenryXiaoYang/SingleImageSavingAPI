@@ -1,0 +1,15 @@
+### 测试上传图片
+POST http://127.0.0.1:8000/update_image
+Authorization: Bearer your-secret-api-key
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="test.png"
+Content-Type: image/png
+
+< ./test.png
+--boundary--
+
+### 测试获取图片（不需要认证）
+GET http://127.0.0.1:8000/get_image
+Accept: image/png

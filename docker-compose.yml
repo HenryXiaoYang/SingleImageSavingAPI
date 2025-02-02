@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    container_name: image-server
+    environment:
+      - API_KEY=your-secret-api-key
+    ports:
+      - "8000:8000"
+    restart: unless-stopped 
